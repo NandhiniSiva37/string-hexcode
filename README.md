@@ -1,6 +1,27 @@
-# Getting Started with Create React App
+# Run Local
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```
+git clone [Git hub url](https://github.com/NandhiniSiva37/string-hexcode.git)
+cd string-hexcode
+npm install
+npm start
+```
+
+#Packages 
+React - 
+react-router - v6.17.0
+Typescript - v4.9.5
+Tailwind - v3.3.3
+
+
+- [React](https://reactjs.org/) - v18.2.0
+- [react-router](https://reactrouter.com/web/guides/quick-start) - v6.17.0
+- [Typescript](https://www.typescriptlang.org/) - v4.9.5
+- [Context](https://reactjs.org/docs/context.html) - v18.2.0
+- [Tailwind](https://tailwindcss.com/) - v3.3.3
+- [color-name-list](https://www.npmjs.com/package/color-name-list) - v10.16.0
+
+
 
 ## Available Scripts
 
