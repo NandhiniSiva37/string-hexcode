@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import colorNameList from "color-name-list";
 
 function Home() {
   const [inputValue, setInputValue] = useState("");
   const [colors, setColors] = useState<any>();
+  const [showInd, setShowInd] = useState(false);
 
   const handleSearch = () => {
     let colorsList = colorNameList.filter((o) => {
@@ -13,6 +14,7 @@ function Home() {
     });
 
     setColors(colorsList);
+    setShowInd(true);
   };
 
   console.log(colors);
@@ -33,21 +35,34 @@ function Home() {
         </button>
       </div>
       <div className="flex justify-center items-center">
-        <div className="grid grid-cols-3 gap-16 mt-8">
-          {colors &&
-            colors.map((d: any) => (
-              <div
-                style={{
-                  backgroundColor: d.hex,
-                  width: "160px",
-                  height: "160px",
-                  textAlign: "center",
-                }}
-              >
-                {d.hex}
+        {showInd && (
+          <div
+            className={`${
+              colors?.length > 0 ? "grid grid-cols-3 gap-16" : ""
+            } mt-8 text-center`}
+          >
+            {colors?.length > 0 ? (
+              colors.map((d: any) => (
+                <div
+                  style={{
+                    backgroundColor: d.hex,
+                    width: "160px",
+                    height: "160px",
+                    textAlign: "center",
+                  }}
+                >
+                  {d.hex}
+                </div>
+              ))
+            ) : (
+              <div>
+                <span className="text-blue font-semibold m-20">
+                  No matching colors found
+                </span>
               </div>
-            ))}
-        </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
